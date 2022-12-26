@@ -72,7 +72,7 @@ func TestSpeedTest(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := SpeedTest(tt.provider)
+			got, err := Start(tt.provider)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("SpeedTest() error = %v, wantErr %v", err, tt.wantErr)
 				return
@@ -87,7 +87,7 @@ func TestSpeedTest(t *testing.T) {
 func BenchmarkOokla(b *testing.B) {
 	provider := ookla.InitProvider()
 	for i := 0; i < b.N; i++ {
-		_, err := SpeedTest(provider)
+		_, err := Start(provider)
 		if err != nil {
 			b.Fatal(err)
 		}
@@ -97,7 +97,7 @@ func BenchmarkOokla(b *testing.B) {
 func BenchmarkNetflix(b *testing.B) {
 	provider := netflix.InitProvider()
 	for i := 0; i < b.N; i++ {
-		_, err := SpeedTest(provider)
+		_, err := Start(provider)
 		if err != nil {
 			b.Fatal(err)
 		}

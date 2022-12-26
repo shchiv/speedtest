@@ -17,12 +17,11 @@ go get github.com/shchiv/speedtest
 #### Netflix (fast.com) example
 ```go
 func main() {
-	netflixProvider := netflix.InitProvider()
-	netflixSpeed, err := SpeedTest(netflixProvider)
-	if err != nil {
-		log.Fatal(err)
-	}
-	log.Printf("Netflix Download: %v Upload: %v", netflixSpeed.Down, netflixSpeed.Up)
+    speed, err := speedtest.Start(speedtest.Netflix())
+    if err != nil {
+        log.Fatal(err)
+    }
+    log.Printf("Netflix Download: %v Upload: %v", speed.Down, speed.Up)
 }
 ```
 
@@ -36,12 +35,11 @@ Netflix
 #### Ookla (speedtest.next) example
 ```go
 func main() {
-	ooklaProvider := ookla.InitProvider()
-	ooklaSpeed, err := SpeedTest(ooklaProvider)
-	if err != nil {
-		log.Fatal(err)
-	}
-	log.Printf("Ookla Download: %v Upload: %v", ooklaSpeed.Down, ooklaSpeed.Up)
+    speed, err := speedtest.Start(speedtest.Ookla())
+    if err != nil {
+        log.Fatal(err)
+    }
+    log.Printf("Netflix Download: %v Upload: %v", speed.Down, speed.Up)
 }
 ```
 
