@@ -2,19 +2,8 @@ package netflix
 
 import (
 	"fmt"
-	"github.com/adhocore/fast"
 	"github.com/shchiv/speedtest/mod"
 )
-
-type Service interface {
-	Measure(noUp bool) (*fast.Fast, error)
-}
-
-type serviceImpl struct{}
-
-func (s *serviceImpl) Measure(noUp bool) (*fast.Fast, error) {
-	return fast.Measure(noUp)
-}
 
 type Provider struct {
 	Service Service

@@ -1,6 +1,1 @@
 .idea
-*.env
-*.env.secret
-credentials.json
-token.json
-.DS_Store
