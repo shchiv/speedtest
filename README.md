@@ -39,7 +39,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-    log.Printf("Netflix Download: %v Upload: %v", speed.Down, speed.Up)
+    log.Printf("Ookla Download: %v Upload: %v", speed.Down, speed.Up)
 }
 ```
 
